@@ -23,11 +23,11 @@ try {
     if ($engine.Architecture -notin @('aarch64', 'arm64', 'x86_64', 'amd64')) {
         throw 'Supported CPU architectures: ARM64 and AMD64.'
     }
-    if ([long]$engine.MemTotal -lt 4294967296) {
-        throw 'Allocate at least 4 GiB to Docker Desktop/WSL 2; the host OS needs extra RAM.'
+    if ([long]$engine.MemTotal -lt 3896508416) {
+        throw 'Allocate at least 4 GiB to Docker Desktop/WSL 2; reported memory must cover the 3716 MiB workload.'
     }
     Invoke-Docker -DockerArguments @('compose', 'config', '--quiet')
-    Write-Host "PASS preflight: Linux/$($engine.Architecture), Compose, configuration, Docker memory >= 4 GiB."
+    Write-Host "PASS preflight: Linux/$($engine.Architecture), Compose, configuration, memory covers 3716 MiB workload."
 
     if ($Action -eq 'setup') {
         Write-Host 'Starting the lab. First run downloads images and a 1.1 GB model.'

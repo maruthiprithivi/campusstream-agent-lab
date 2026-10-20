@@ -41,6 +41,7 @@ def main():
         for name, command in launchers:
             for action, flags, success in [
                 ('preflight', {}, True),
+                ('preflight', {'ENGINE_MEMORY': '4026531840'}, True),
                 ('preflight', {'ENGINE_DOWN': '1'}, False),
                 ('preflight', {'ENGINE_OS': 'windows'}, False),
                 ('preflight', {'ENGINE_MEMORY': '2147483648'}, False),

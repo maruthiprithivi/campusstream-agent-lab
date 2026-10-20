@@ -20,5 +20,6 @@
     "results/dashboard.html"
   ],
   "native_Windows_WSL2": "NOT TESTED",
-  "Docker_VM_4GiB": "NOT TESTED; per-service caps total 3716 MiB"
+  "Docker_VM_4GiB": "NOT TESTED; per-service caps total 3716 MiB",
+  "4GiB_allocation_reserve_case": "PASS: 3.75 GiB reported memory accepted; 2 GiB rejected"
 }

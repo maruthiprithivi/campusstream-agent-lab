@@ -39,7 +39,7 @@ Download/extract the student repository and open its folder:
 
 Setup includes preflight. Postflight saves `results/postflight.json` and `results/dashboard.html` after all real checks pass. Open http://localhost:8090, ask a starter prompt, inspect the trace and download your own dashboard too. Record the classroom host OS/CPU, Docker version/allocation and latency with its receipt. Stop with `docker compose down`; the model cache is retained.
 
-Launcher checks: `python3 tests/test_launchers.py` tests Bash, and also PowerShell if `PWSH` points to a runtime. These developer-only checks simulate engine-down, Windows-container mode, too little Docker memory, failed startup and failed E2E. They assert nonzero exits, no continuation after failure, read-only preflight, correct readiness invocation, receipt copying and execution from a path containing spaces. They do not replace actual model/database tests. No Python is required on student hosts.
+Launcher checks: `python3 tests/test_launchers.py` tests Bash, and also PowerShell if `PWSH` points to a runtime. These developer-only checks simulate engine-down, Windows-container mode, too little Docker memory (accepts 3.75 GiB reported after a 4 GiB allocation reserves some for Linux), failed startup and failed E2E. They assert nonzero exits, no continuation after failure, read-only preflight, correct readiness invocation, receipt copying and execution from a path containing spaces. They do not replace actual model/database tests. No Python is required on student hosts.
 
 For development-only x86 emulation after a native run has populated `campusstream_model-cache`, stop the native stack first (same port), then:
 

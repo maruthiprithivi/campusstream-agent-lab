@@ -13,9 +13,9 @@ read -r engine_os engine_arch engine_memory <<< "$engine"
 [[ "$engine_os" == linux ]] || fail "Switch Docker Desktop to Linux containers."
 case "$engine_arch" in aarch64|arm64|x86_64|amd64) ;; *) fail "Supported CPU architectures: ARM64 and AMD64." ;; esac
 [[ "$engine_memory" =~ ^[0-9]+$ ]] || fail "Could not read Docker memory allocation."
-(( engine_memory >= 4294967296 )) || fail "Allocate at least 4 GiB to Docker Desktop; the host OS needs extra RAM."
+(( engine_memory >= 3896508416 )) || fail "Allocate at least 4 GiB to Docker Desktop; reported memory must cover the 3716 MiB workload."
 docker compose config --quiet
-printf 'PASS preflight: Linux/%s, Compose, configuration, Docker memory >= 4 GiB.\n' "$engine_arch"
+printf 'PASS preflight: Linux/%s, Compose, configuration, memory covers 3716 MiB workload.\n' "$engine_arch"
 
 case "$1" in
   setup)
