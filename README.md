@@ -1,12 +1,16 @@
 # CampusStream: make the AI show its evidence
 
+> **Moved to the course repository.** Use [big_data_architecture/labs/campusstream-agent-lab](https://github.com/maruthiprithivi/big_data_architecture/tree/main/labs/campusstream-agent-lab) and its [lab-only release ZIP](https://github.com/maruthiprithivi/big_data_architecture/releases/download/campusstream-lab-v1.0.0/campusstream-agent-lab.zip). The code in this older repository is retained for reference.
+
 A twenty-minute Big Data Architecture lab: ask a small local model to plan an investigation, execute a bounded ClickHouse tool, and build a downloadable HTML dashboard. One million synthetic viewing sessions; one homepage decision. No external AI API, API key, GPU or host Python/Node install.
 
 ## Start on Windows or macOS
 
-Student repository: **https://github.com/maruthiprithivi/campusstream-agent-lab**
+Student repository: **https://github.com/maruthiprithivi/big_data_architecture/tree/main/labs/campusstream-agent-lab**
 
-On GitHub, choose **Code → Download ZIP**, then **extract** it. No Git installation is required. Open the extracted folder containing `compose.yaml` in Terminal (macOS) or PowerShell (Windows). If you use Git, clone `https://github.com/maruthiprithivi/campusstream-agent-lab.git` instead.
+Download **[the lab-only ZIP](https://github.com/maruthiprithivi/big_data_architecture/releases/download/campusstream-lab-v1.0.0/campusstream-agent-lab.zip)**, then **extract** it. No Git installation is required. Open the extracted `campusstream-agent-lab` folder containing `compose.yaml` in Terminal (macOS) or PowerShell (Windows).
+
+If you already cloned the course repository, open `labs/campusstream-agent-lab` instead. The lab's own Compose file and scripts run independently of the blockchain lab at the repository root. Run the commands below from the lab folder.
 
 Install and start Docker Desktop before the session. Windows uses **Linux containers with WSL 2**. Use the Intel/Apple Silicon Docker Desktop edition matching your Mac. Set Docker/WSL memory to at least **4 GiB**; the laptop OS needs additional RAM. Then run **one command per action**:
 
